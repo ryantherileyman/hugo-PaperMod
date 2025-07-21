@@ -93,6 +93,16 @@
 </article>
 {{- end }}
 
+{{ if .IsHome }}
+<footer class="page-footer">
+  <ul class="post-tags">
+    {{ range .Site.Taxonomies.tags }}
+    <li><a class="tag" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
+    {{ end }}
+  </ul>
+</footer>
+{{ end }}
+
 {{- if gt $paginator.TotalPages 1 }}
 <footer class="page-footer">
   <nav class="pagination">
